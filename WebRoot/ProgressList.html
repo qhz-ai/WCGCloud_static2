@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://39.106.55.224/wgcloud/appInfo/list -->
+<html style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--<base href="/">--><base href=".">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>WGCLOUD</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="./proManage_files/all.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="./proManage_files/ionicons.css">
+
+<!-- Tempusdominus Bbootstrap 4 -->
+<link rel="stylesheet" href="./proManage_files/tempusdominus-bootstrap-4.min.css">
+<!-- iCheck -->
+<link rel="stylesheet" href="./proManage_files/icheck-bootstrap.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="./proManage_files/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet" href="./proManage_files/daterangepicker.css">
+<!-- summernote -->
+<link rel="stylesheet" href="./proManage_files/summernote-bs4.css">
+<!-- Google Font: Source Sans Pro -->
+<link href="./proManage_files/fonts.googleapis.css" rel="stylesheet">
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="./proManage_files/bootstrap-4.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="./proManage_files/select2.min.css">
+<link rel="stylesheet" href="./proManage_files/select2-bootstrap4.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="./proManage_files/adminlte.min.css">
+<!-- Toastr -->
+<link rel="stylesheet" href="./proManage_files/toastr.min.css">
+<link rel="stylesheet" href="./proManage_files/highlighter.css">
+<link rel="shortcut icon" type="image/x-icon" href="http://39.106.55.224/wgcloud/static/logincss/favicon.png">
+
+
+<link href="./proManage_files/WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<body class="sidebar-mini sidebar-collapse" style="height: auto;">
+
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="./proManage_files/g2.min.js.下载"></script>
+<script src="./proManage_files/data-set.min.js.下载"></script>
+<script src="./proManage_files/jquery-3.2.1.min.js.下载"></script>
+
+
+
+<div class="wrapper">
+
+  <!-- Navbar -->
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div  style="font-size: 0.9rem; min-height: 597px;">
+    <!-- Content Header (Page header) -->
+  <!--   <section class="content-header" style="height:38px">
+      <div class="container-fluid">
+        <div class="row mb-2" style="margin-top: -7px;">
+          <div class="col-sm-6"></div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="javascript:history.back()">返回上级</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>/.container-fluid
+    </section> -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">&nbsp;<span class="mdi mdi-format-list-bulleted">进程列表</span></h3>
+        <div class=" float-sm-right">
+          <!-- SEARCH FORM -->
+          <form class="form-inline ml-3" action="http://39.106.55.224/wgcloud/appInfo/list">
+            <button type="button" onclick="searchByOnline(&#39;&#39;)" class="btn btn-primary btn-sm">全部</button>&nbsp;
+            <button type="button" onclick="searchByOnline(&#39;1&#39;)" class="btn btn-success btn-sm">在线</button>&nbsp;
+            <button type="button" onclick="searchByOnline(&#39;2&#39;)" class="btn bg-danger btn-sm">已下线</button>&nbsp;
+            <button type="button" onclick="add()" disabled="true" class="btn btn-primary btn-sm">添加</button>&nbsp;
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" id="hostname" name="hostname" autocomplete="off" value="" type="search" placeholder="输入ip" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-default" type="submit">
+                  <span class="mdi mdi-magnify"></span>
+                </button>
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th style="width: 60px">序号</th>
+            <th>IP</th>
+            <th>进程名称</th>
+            
+            
+              <th style="cursor:pointer" onclick="searchByOrder(&#39;MEM_PER&#39;,&#39;ASC&#39;)">内存%
+            
+            </th>
+
+
+            
+            
+              <th style="cursor:pointer" onclick="searchByOrder(&#39;CPU_PER&#39;,&#39;ASC&#39;)">CPU%
+            
+            </th>
+
+            <th title="readBytes">读取</th>
+            <th title="writeBytes">写入</th>
+            <th>监控状态</th>
+            <th>更新时间</th>
+              <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td>1</td>
+              <td>iZ2zeafdzwdb5zc1rnstoyZ</td>
+
+                
+                
+                  <td><span>mysql</span>
+                
+              </td>
+
+              <td>
+                
+                
+                
+                  <span class="badge bg-primary">17.53</span>
+                
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">0.08</span>
+                  
+              </td>
+              <td>5.0G</td>
+              <td>63.7G</td>
+              <td>
+                
+                  <span class="badge bg-primary">监控中</span>
+                
+                
+              </td>
+              <td>2021-04-20 13:23:23</td>
+              <td>
+              
+                <button type="button" onclick="edit(&quot;8e3c21c59869480aa6032680c984fe30&quot;)" disabled="true" class="btn bg-gradient-primary btn-sm">编辑</button>
+                <button type="button" onclick="del(&quot;8e3c21c59869480aa6032680c984fe30&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button>
+<!--                 <button type="button" onclick="view(&quot;8e3c21c59869480aa6032680c984fe30&quot;)" class="btn bg-gradient-primary btn-sm">图表</button>
+ -->                
+                <a href="progress_tubiao.html">                
+                <button type="button"  class="btn bg-gradient-primary btn-sm">图表</button>
+                </a>
+                </td>
+                
+            </tr>
+          
+            <tr>
+              <td>2</td>
+              <td>iZ2zeafdzwdb5zc1rnstoyZ</td>
+
+                
+                
+                  <td><span>wgcloud-server</span>
+                
+              </td>
+
+              <td>
+                
+                
+                
+                  <span class="badge bg-primary">26.87</span>
+                
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">0.18</span>
+                  
+              </td>
+              <td>1.1G</td>
+              <td>455.0M</td>
+              <td>
+                
+                  <span class="badge bg-primary">监控中</span>
+                
+                
+              </td>
+              <td>2021-04-20 13:23:23</td>
+              <td>
+                <button type="button" onclick="edit(&quot;d2d36e547b5840d29aad594e4937e5bd&quot;)" disabled="true" class="btn bg-gradient-primary btn-sm">编辑</button>
+                <button type="button" onclick="del(&quot;d2d36e547b5840d29aad594e4937e5bd&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button>
+                <button type="button" onclick="view(&quot;d2d36e547b5840d29aad594e4937e5bd&quot;)" class="btn bg-gradient-primary btn-sm">图表</button></td>
+            </tr>
+          
+            <tr>
+              <td>3</td>
+              <td>iZ2zeafdzwdb5zc1rnstoyZ</td>
+
+                
+                
+                  <td><span>2341234</span>
+                
+              </td>
+
+              <td>
+                
+                
+                
+                  <span class="badge bg-primary">26.87</span>
+                
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">0.18</span>
+                  
+              </td>
+              <td>1.1G</td>
+              <td>455.0M</td>
+              <td>
+                
+                  <span class="badge bg-primary">监控中</span>
+                
+                
+              </td>
+              <td>2021-04-20 13:23:23</td>
+              <td>
+                <button type="button" onclick="edit(&quot;dc7b8c2c890746d29ec95c79fd7570e2&quot;)" disabled="true" class="btn bg-gradient-primary btn-sm">编辑</button>
+                <button type="button" onclick="del(&quot;dc7b8c2c890746d29ec95c79fd7570e2&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button>
+                <button type="button" onclick="view(&quot;dc7b8c2c890746d29ec95c79fd7570e2&quot;)" class="btn bg-gradient-primary btn-sm">图表</button></td>
+            </tr>
+          
+            <tr>
+              <td>4</td>
+              <td>192.168.1.2</td>
+
+                
+                  <td title="超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">nginx</span>
+                
+                
+              </td>
+
+              <td>
+                
+                
+                
+                  <span class="badge bg-primary">-1.0</span>
+                
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">-1.0</span>
+                  
+              </td>
+              <td>-1.0M</td>
+              <td>-1.0M</td>
+              <td>
+                
+                  <span class="badge bg-primary">监控中</span>
+                
+                
+              </td>
+              <td>2021-04-10 20:18:04</td>
+              <td>
+                <button type="button" onclick="edit(&quot;328abf79927b4a97b0c858d99afb37e1&quot;)" disabled="true" class="btn bg-gradient-primary btn-sm">编辑</button>
+                <button type="button" onclick="del(&quot;328abf79927b4a97b0c858d99afb37e1&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button>
+                <button type="button" onclick="view(&quot;328abf79927b4a97b0c858d99afb37e1&quot;)" class="btn bg-gradient-primary btn-sm">图表</button></td>
+            </tr>
+          
+            <tr>
+              <td>5</td>
+              <td>192.168.1.2</td>
+
+                
+                  <td title="超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">wgcloud-server-进程名称关键字</span>
+                
+                
+              </td>
+
+              <td>
+                
+                
+                
+                  <span class="badge bg-primary">-1.0</span>
+                
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">-1.0</span>
+                  
+              </td>
+              <td>-1.0M</td>
+              <td>-1.0M</td>
+              <td>
+                
+                  <span class="badge bg-primary">监控中</span>
+                
+                
+              </td>
+              <td>2021-04-10 20:18:04</td>
+              <td>
+                <button type="button" onclick="edit(&quot;77e2bfca0ca34143b500b529d5fd1308&quot;)" disabled="true" class="btn bg-gradient-primary btn-sm">编辑</button>
+                <button type="button" onclick="del(&quot;77e2bfca0ca34143b500b529d5fd1308&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button>
+                <button type="button" onclick="view(&quot;77e2bfca0ca34143b500b529d5fd1308&quot;)" class="btn bg-gradient-primary btn-sm">图表</button></td>
+            </tr>
+          
+            <tr>
+              <td>6</td>
+              <td>192.168.1.2</td>
+
+                
+                  <td title="超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">wgcloud-server-进程ID</span>
+                
+                
+              </td>
+
+              <td>
+                
+                
+                
+                  <span class="badge bg-primary">-1.0</span>
+                
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">-1.0</span>
+                  
+              </td>
+              <td>-1.0M</td>
+              <td>-1.0M</td>
+              <td>
+                
+                  <span class="badge bg-primary">监控中</span>
+                
+                
+              </td>
+              <td>2021-04-10 20:18:04</td>
+              <td>
+                <button type="button" onclick="edit(&quot;c68f42f65eac4ff3a34a1977938f2263&quot;)" disabled="true" class="btn bg-gradient-primary btn-sm">编辑</button>
+                <button type="button" onclick="del(&quot;c68f42f65eac4ff3a34a1977938f2263&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button>
+                <button type="button" onclick="view(&quot;c68f42f65eac4ff3a34a1977938f2263&quot;)" class="btn bg-gradient-primary btn-sm">图表</button></td>
+            </tr>
+          
+
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer clearfix">
+    <ul class="pagination pagination-sm m-0 float-right">
+        <li class="page-item"><a class="page-link" href="http://39.106.55.224/wgcloud/appInfo/list?1=1&amp;page=1">«</a></li>
+        
+            <li class="page-item">
+                <a class="page-link" style="font-weight:bold;color:#000">1</a>
+                
+            </li>
+        
+        <li class="page-item"><a class="page-link" href="http://39.106.55.224/wgcloud/appInfo/list?1=1&amp;page=1">»</a></li>
+    </ul>
+</div>
+    </div>
+    <!-- /.card -->
+
+
+  </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- /.content-wrapper -->
+<footer class="main-footer">
+	<strong>Copyright ©2017-<span id="copyyear">2021</span> <a target="_blank" href="http://www.transcendcom.cn/">www.transcendcom.cn</a>.</strong>
+	All rights reserved.
+	<div class="float-right d-none d-sm-inline-block">
+		
+			<span id="newversion"></span><b id="nowversion" alt="专业版
+到期时间：20220107
+节点数量：50" title="专业版
+到期时间：20220107
+节点数量：50">Version 3.3.1-pro</b>
+		
+		
+	</div>
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+	<!-- Control sidebar content goes here -->
+<div class="p-3 control-sidebar-content"><h5>Customize AdminLTE</h5><hr class="mb-2"><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>No Navbar border</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Body small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Navbar small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Footer small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav flat style</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav legacy style</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav compact</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav child indent</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Main Sidebar disable hover/focus auto expand</span></div><div class="mb-4"><input type="checkbox" value="1" class="mr-1"><span>Brand small text</span></div><h6>Navbar Variants</h6><div class="d-flex"><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-secondary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-cyan elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-light elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-white elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div></div><h6>Accent Color Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Dark Sidebar Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Light Sidebar Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Brand Logo Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-secondary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-cyan elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-light elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-white elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><a href="javascript:void(0)">clear</a></div></div></aside>
+<!-- /.control-sidebar -->
+
+<!-- jQuery -->
+<script src="./proManage_files/jquery.min.js.下载"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="./proManage_files/jquery-ui.min.js.下载"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+	$.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="./proManage_files/bootstrap.bundle.min.js.下载"></script>
+<!-- Select2 -->
+<script src="./proManage_files/select2.full.min.js.下载"></script>
+<!-- ChartJS -->
+<script src="./proManage_files/Chart.min.js.下载"></script>
+<!-- Sparkline -->
+<script src="./proManage_files/sparkline.js.下载"></script>
+<!-- JQVMap -->
+<script src="./proManage_files/jquery.vmap.min.js.下载"></script>
+<script src="./proManage_files/jquery.vmap.usa.js.下载"></script>
+<!-- jQuery Knob Chart -->
+<script src="./proManage_files/jquery.knob.min.js.下载"></script>
+<!-- InputMask -->
+<script src="./proManage_files/moment.min.js.下载"></script>
+<script src="./proManage_files/jquery.inputmask.bundle.min.js.下载"></script>
+<!-- daterangepicker -->
+<script src="./proManage_files/daterangepicker.js.下载"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="./proManage_files/tempusdominus-bootstrap-4.min.js.下载"></script>
+<!-- Summernote -->
+<script src="./proManage_files/summernote-bs4.min.js.下载"></script>
+<!-- overlayScrollbars -->
+<script src="./proManage_files/jquery.overlayScrollbars.min.js.下载"></script>
+<!-- AdminLTE App -->
+<script src="./proManage_files/adminlte.js.下载"></script>
+<!-- SweetAlert2 -->
+<script src="./proManage_files/sweetalert2.min.js.下载"></script>
+<!-- Toastr -->
+<script src="./proManage_files/toastr.min.js.下载"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./proManage_files/demo.js.下载"></script>
+<!-- my97 datepicker -->
+<script src="./proManage_files/WdatePicker.js.下载"></script>
+<script type="text/javascript">
+toastr.options.timeOut = 15000;
+</script>
+
+<div id="sidebar-overlay"></div></div>
+<!-- ./wrapper -->
+
+<script src="./proManage_files/app.js.下载"></script>
+
+<script>
+  var msg = null;
+  if(msg!='' && msg!=null){
+    toastr.info(msg);
+  }
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://39.106.55.224/wgcloud/systemInfo/systemInfoList -->
+<html style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--<base href="/">--><base href=".">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>WGCLOUD</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="./hostManage_files/all.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="./hostManage_files/ionicons.css">
+
+<!-- Tempusdominus Bbootstrap 4 -->
+<link rel="stylesheet" href="./hostManage_files/tempusdominus-bootstrap-4.min.css">
+<!-- iCheck -->
+<link rel="stylesheet" href="./hostManage_files/icheck-bootstrap.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="./hostManage_files/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet" href="./hostManage_files/daterangepicker.css">
+<!-- summernote -->
+<link rel="stylesheet" href="./hostManage_files/summernote-bs4.css">
+<!-- Google Font: Source Sans Pro -->
+<link href="./hostManage_files/fonts.googleapis.css" rel="stylesheet">
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="./hostManage_files/bootstrap-4.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="./hostManage_files/select2.min.css">
+<link rel="stylesheet" href="./hostManage_files/select2-bootstrap4.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="./hostManage_files/adminlte.min.css">
+<!-- Toastr -->
+<link rel="stylesheet" href="./hostManage_files/toastr.min.css">
+<link rel="stylesheet" href="./hostManage_files/highlighter.css">
+<link rel="shortcut icon" type="image/x-icon" href="http://39.106.55.224/wgcloud/static/logincss/favicon.png">
+
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="css/materialdesignicons.min.css" rel="stylesheet">
+<!-- <link href="css/style.min.css" rel="stylesheet"> -->
+<link href="./hostManage_files/WdatePicker.css" rel="stylesheet" type="text/css"></head>
+<body class="sidebar-mini sidebar-collapse" style="height: auto;">
+
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="./hostManage_files/g2.min.js.下载"></script>
+<script src="./hostManage_files/data-set.min.js.下载"></script>
+<script src="./hostManage_files/jquery-3.2.1.min.js.下载"></script>
+
+
+
+<div class="wrapper">
+
+  <!-- Navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div  style="font-size: 0.9rem; min-height: 597px;">
+    <!-- Content Header (Page header) -->
+     <!--  <section class="content-header" style="height:38px">
+          <div class="container-fluid">
+              <div class="row mb-2" style="margin-top: -7px;">
+                  <div class="col-sm-6"></div>
+                  <div class="col-sm-6">
+                      <ol class="breadcrumb float-sm-right">
+                          <li class="breadcrumb-item"><a href="javascript:history.back()">返回上级</a></li>
+                      </ol>
+                  </div>
+              </div>
+          </div>/.container-fluid
+      </section> -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">&nbsp;<span class="mdi mdi-television">主机列表</span></h3>
+          <div class="card-tools">
+              <div class="float-sm-right">
+                  <!-- SEARCH FORM -->
+                  <form class="form-inline ml-3" action="http://39.106.55.224/wgcloud/systemInfo/systemInfoList">
+                      <button type="button" onclick="searchByOnline(&#39;&#39;)" class="btn btn-primary btn-sm">全部</button>&nbsp;
+                      <button type="button" onclick="searchByOnline(&#39;1&#39;)" class="btn btn-success btn-sm">在线</button>&nbsp;
+                      <button type="button" onclick="searchByOnline(&#39;2&#39;)" class="btn bg-danger btn-sm">已下线</button>&nbsp;
+                      <div class="input-group input-group-sm">
+                          <input class="form-control form-control-navbar" name="hostname" autocomplete="off" value="" type="search" placeholder="输入IP或备注" aria-label="Search">
+                          <div class="input-group-append">
+                              <button class="btn btn-default" type="submit">
+                                  <span class="mdi mdi-magnify"></span>
+                              </button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <table class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th style="width: 60px">序号</th>
+              <th>系统</th>
+              <th>IP</th>
+
+                
+                
+                    <th style="cursor:pointer" onclick="searchByOrder(&#39;MEM_PER&#39;,&#39;ASC&#39;)">内存%
+                
+            </th>
+
+
+                
+                
+                    <th style="cursor:pointer" onclick="searchByOrder(&#39;CPU_PER&#39;,&#39;ASC&#39;)">CPU%
+                
+            </th>
+              <th title="所有磁盘已使用%">磁盘%</th>
+              <th title="累计接收的流量">接收G</th>
+              <th title="累计发送的流量">发送G</th>
+              <th title="当前接收KB/秒">接收KB/秒</th>
+              <th title="当前发送KB/秒">发送KB/秒</th>
+            <th>更新时间</th>
+              <th>备注</th>
+              <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td>1</td>
+                <td>
+                    <img src="./hostManage_files/centos.png">
+                </td>
+                    <td title="102.168.1.7超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">102.168.1.7</span>
+              </td>
+
+              <td>
+                  <span class="badge bg-primary">56.25</span>
+              </td>
+              <td>
+                  <span class="badge bg-primary">1.0</span>
+              </td>
+                <td>
+                   <span class="badge bg-primary">25.64</span>
+                </td>
+                <td>1.58</td>
+                <td>1.91</td>
+                <td><span>0.0</span></td>
+                <td><span>0.0</span></td>
+              <td>2021-03-25 17:05:25</td>
+                <td></td>
+              <td>
+
+                  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;1c483be2dd064dc8aa4e80e8cc1529d9&quot;,null)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;1c483be2dd064dc8aa4e80e8cc1529d9&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>2</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.1.1超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.1</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">52.0</span>
+                  
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">40.63</span>
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">31.39</span>
+                    
+                </td>
+                <td>1.13</td>
+                <td>1.12</td>
+                <td><span>0.0</span></td>
+                <td><span>0.0</span></td>
+              <td>2021-03-22 21:46:42</td>
+                <td>ERP</td>
+              <td>
+                   <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+              	   <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+					<a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>	
+                <!--   <button type="button" onclick="view(&quot;fedc0135710f498ba4ff188cee4ccd69&quot;)" class="btn btn-primary btn-sm">系统</button> -->
+<!--                   <button type="button" onclick="viewChart(&quot;fedc0135710f498ba4ff188cee4ccd69&quot;)" class="btn btn-primary btn-sm">图表</button>
+ -->                  <!-- <button type="button" onclick="viewImage(&quot;fedc0135710f498ba4ff188cee4ccd69&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;fedc0135710f498ba4ff188cee4ccd69&quot;,&quot;ERP&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;fedc0135710f498ba4ff188cee4ccd69&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>3</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.1.10超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.10</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">59.0</span>
+                  
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">17.19</span>
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">31.17</span>
+                    
+                </td>
+                <td>1.12</td>
+                <td>1.05</td>
+                <td><span>0.0</span></td>
+                <td><span>0.0</span></td>
+              <td>2021-03-22 21:23:30</td>
+                <td>Hadoop1</td>
+              <td>
+  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                <!--   <button type="button" onclick="view(&quot;d525686ca50c40ce9779a2cc437ce495&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;d525686ca50c40ce9779a2cc437ce495&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;d525686ca50c40ce9779a2cc437ce495&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;d525686ca50c40ce9779a2cc437ce495&quot;,&quot;Hadoop1&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;d525686ca50c40ce9779a2cc437ce495&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>4</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.1.11超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.11</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">58.0</span>
+                  
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">11.92</span>
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">31.17</span>
+                    
+                </td>
+                <td>0.37</td>
+                <td>0.07</td>
+                <td><span>0.0</span></td>
+                <td><span>0.0</span></td>
+              <td>2021-04-11 22:15:04</td>
+                <td>AI练习</td>
+              <td>
+  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                 <!--  <button type="button" onclick="view(&quot;80863477662246bc83cd8b6148208573&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;80863477662246bc83cd8b6148208573&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;80863477662246bc83cd8b6148208573&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;80863477662246bc83cd8b6148208573&quot;,&quot;AI\u7EC3\u4E60&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;80863477662246bc83cd8b6148208573&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>5</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.1.2超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.2</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                      <span class="badge bg-danger">98.0</span>
+                  
+                  
+                  
+              </td>
+              <td>
+                  
+                      <span class="badge bg-danger">99.0</span>
+                  
+                  
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">32.47</span>
+                    
+                </td>
+                <td>0.17</td>
+                <td>0.02</td>
+                <td><span>2.0</span></td>
+                <td><span>1.0</span></td>
+              <td>2021-04-10 20:18:04</td>
+                <td>跳板机</td>
+              <td>
+  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                 <!--  <button type="button" onclick="view(&quot;64803fb3efdb4c5587b1730500899758&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;64803fb3efdb4c5587b1730500899758&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;64803fb3efdb4c5587b1730500899758&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;64803fb3efdb4c5587b1730500899758&quot;,&quot;\u8DF3\u677F\u673A&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;64803fb3efdb4c5587b1730500899758&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>6</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.1.3超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.3</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                      <span class="badge bg-danger">93.0</span>
+                  
+                  
+                  
+              </td>
+              <td>
+                  
+                      <span class="badge bg-danger">92.0</span>
+                  
+                  
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">32.47</span>
+                    
+                </td>
+                <td>0.17</td>
+                <td>0.02</td>
+                <td><span>2.0</span></td>
+                <td><span>1.0</span></td>
+              <td>2021-04-10 20:18:01</td>
+                <td>回归测试</td>
+              <td>
+  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;dd4102a8ad304061ba8ece9aec5737f9&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;dd4102a8ad304061ba8ece9aec5737f9&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;dd4102a8ad304061ba8ece9aec5737f9&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;dd4102a8ad304061ba8ece9aec5737f9&quot;,&quot;\u56DE\u5F52\u6D4B\u8BD5&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;dd4102a8ad304061ba8ece9aec5737f9&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>7</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.1.4超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.4</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                      <span class="badge bg-warning">88.0</span>
+                  
+                  
+              </td>
+              <td>
+                  
+                  
+                      <span class="badge bg-warning">86.0</span>
+                  
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">32.47</span>
+                    
+                </td>
+                <td>0.17</td>
+                <td>0.02</td>
+                <td><span>2.0</span></td>
+                <td><span>1.0</span></td>
+              <td>2021-04-10 20:18:01</td>
+                <td>MyCat集群</td>
+              <td>
+  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;6b00ef10df44450c9dc45aa1b0136b5f&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;6b00ef10df44450c9dc45aa1b0136b5f&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;6b00ef10df44450c9dc45aa1b0136b5f&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;6b00ef10df44450c9dc45aa1b0136b5f&quot;,&quot;MyCat\u96C6\u7FA4&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;6b00ef10df44450c9dc45aa1b0136b5f&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>8</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.1.5超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.5</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">46.0</span>
+                  
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">36.72</span>
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">32.47</span>
+                    
+                </td>
+                <td>0.17</td>
+                <td>0.02</td>
+                <td><span>2.0</span></td>
+                <td><span>1.0</span></td>
+              <td>2021-04-10 20:18:01</td>
+                <td>Hadoop2</td>
+              <td>
+  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;01ee6fb4061345888eb9821725193235&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;01ee6fb4061345888eb9821725193235&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;01ee6fb4061345888eb9821725193235&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;01ee6fb4061345888eb9821725193235&quot;,&quot;Hadoop2&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;01ee6fb4061345888eb9821725193235&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>9</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.1.6超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.6</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">46.0</span>
+                  
+              </td>
+              <td>
+                      <span class="badge bg-primary">36.96</span>
+              </td>
+                <td>
+                        <span class="badge bg-primary">32.47</span>
+                </td>
+                <td>0.17</td>
+                <td>0.02</td>
+                <td><span>2.0</span></td>
+                <td><span>1.0</span></td>
+              <td>2021-04-10 20:18:01</td>
+                <td>Nginx负载</td>
+              <td>
+					  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;cb6b29bb6ae14f6889cf1dbd18eb9ec0&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;cb6b29bb6ae14f6889cf1dbd18eb9ec0&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;cb6b29bb6ae14f6889cf1dbd18eb9ec0&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;cb6b29bb6ae14f6889cf1dbd18eb9ec0&quot;,&quot;Nginx\u8D1F\u8F7D&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;cb6b29bb6ae14f6889cf1dbd18eb9ec0&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>10</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+					<td title="192.168.1.7超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.7</span>
+              	</td>
+
+              <td>
+                      <span class="badge bg-primary">46.0</span>
+              </td>
+              <td>
+                <span class="badge bg-primary">33.98</span>  
+              </td>
+                <td>
+                    <span class="badge bg-primary">32.47</span>
+                </td>
+                <td>0.17</td>
+                <td>0.02</td>
+                <td><span>2.0</span></td>
+                <td><span>1.0</span></td>
+              <td>2021-04-10 20:18:01</td>
+                <td>审计系统</td>
+              <td>
+					  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;a1fc56fdfb524096a48f60befd7384b2&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;a1fc56fdfb524096a48f60befd7384b2&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;a1fc56fdfb524096a48f60befd7384b2&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;a1fc56fdfb524096a48f60befd7384b2&quot;,&quot;\u5BA1\u8BA1\u7CFB\u7EDF&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;a1fc56fdfb524096a48f60befd7384b2&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>11</td>
+                <td>
+                    <img src="./hostManage_files/centos.png">
+                </td>
+
+                  
+                      <td title="192.168.1.99超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.1.99</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">56.81</span>
+                  
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">3.0</span>
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">25.64</span>
+                    
+                </td>
+                <td>13.81</td>
+                <td>21.03</td>
+                <td><span>0.0</span></td>
+                <td><span>0.0</span></td>
+              <td>2021-04-12 11:54:41</td>
+                <td></td>
+              <td>
+  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;7502f00d4f1748f4a5832f635df2c85b&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;7502f00d4f1748f4a5832f635df2c85b&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;7502f00d4f1748f4a5832f635df2c85b&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;7502f00d4f1748f4a5832f635df2c85b&quot;,null)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;7502f00d4f1748f4a5832f635df2c85b&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>12</td>
+                <td>
+                    <img src="./hostManage_files/centos.png">
+                </td>
+
+                  
+                      <td title="192.168.2.99超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.2.99</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">51.03</span>
+                  
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">0.0</span>
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">25.64</span>
+                    
+                </td>
+                <td>10.59</td>
+                <td>15.66</td>
+                <td><span>0.0</span></td>
+                <td><span>0.0</span></td>
+              <td>2021-04-07 12:24:11</td>
+                <td>ETL清洗</td>
+              <td>
+  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;7d3af1bfe9684fed9c26b6b6e7e24cb7&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;7d3af1bfe9684fed9c26b6b6e7e24cb7&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;7d3af1bfe9684fed9c26b6b6e7e24cb7&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;7d3af1bfe9684fed9c26b6b6e7e24cb7&quot;,&quot;ETL\u6E05\u6D17&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;7d3af1bfe9684fed9c26b6b6e7e24cb7&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>13</td>
+                <td>
+                    <img src="./hostManage_files/windows.png">
+                </td>
+
+                  
+                      <td title="192.168.3.99超过10分钟未上报状态，可能已下线"><span class="badge bg-danger">192.168.3.99</span>
+                  
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">68.0</span>
+                  
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">68.75</span>
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">34.18</span>
+                    
+                </td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td><span>1.0</span></td>
+                <td><span>0.0</span></td>
+              <td>2021-04-14 20:49:46</td>
+                <td></td>
+              <td>
+  				  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;1efd03cdd6dc40228b6c75f3a87360f5&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;1efd03cdd6dc40228b6c75f3a87360f5&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;1efd03cdd6dc40228b6c75f3a87360f5&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;1efd03cdd6dc40228b6c75f3a87360f5&quot;,null)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;1efd03cdd6dc40228b6c75f3a87360f5&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+            <tr>
+              <td>14</td>
+                <td>
+                    <img src="./hostManage_files/centos.png">
+                </td>
+
+                  
+                  
+                      <td title="iZ2zeafdzwdb5zc1rnstoyZ"><span>iZ2zeafdzwdb5zc1r...</span>
+                  
+              </td>
+
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">67.93</span>
+                  
+              </td>
+              <td>
+                  
+                  
+                  
+                      <span class="badge bg-primary">4.0</span>
+                  
+              </td>
+                <td>
+                    
+                    
+                    
+                        <span class="badge bg-primary">25.64</span>
+                    
+                </td>
+                <td>20.17</td>
+                <td>32.22</td>
+                <td><span>2.0</span></td>
+                <td><span>2.0</span></td>
+              <td>2021-04-20 11:04:23</td>
+                <td>测试机</td>
+              <td>
+  				  <a href="SystemInfo.html"> <button type="button" class="btn btn-primary btn-sm">系统</button></a>
+                  <a href="System_tubiao.html"> <button type="button" class="btn btn-primary btn-sm">图表</button></a>
+                  <a href="System_tuxiang.html"> <button type="button"  class="btn bg-maroon btn-sm">画像</button></a>
+                  <!-- <button type="button" onclick="view(&quot;26bffb3eb54b49b897f1861b271ea08b&quot;)" class="btn btn-primary btn-sm">系统</button>
+                  <button type="button" onclick="viewChart(&quot;26bffb3eb54b49b897f1861b271ea08b&quot;)" class="btn btn-primary btn-sm">图表</button>
+                  <button type="button" onclick="viewImage(&quot;26bffb3eb54b49b897f1861b271ea08b&quot;)" class="btn bg-maroon btn-sm">画像</button> -->
+                  <button type="button" class="btn btn-default btn-sm" disabled="true" data-toggle="modal" onclick="setHostRemark(&quot;26bffb3eb54b49b897f1861b271ea08b&quot;,&quot;\u6D4B\u8BD5\u673A&quot;)" data-target="#modal-default">
+                      备注
+                  </button>
+                  <button type="button" onclick="del(&quot;26bffb3eb54b49b897f1861b271ea08b&quot;)" disabled="true" class="btn bg-gradient-danger btn-sm">删除</button></td>
+
+            </tr>
+          
+
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer clearfix">
+    <ul class="pagination pagination-sm m-0 float-right">
+        <li class="page-item"><a class="page-link" href="http://39.106.55.224/wgcloud/systemInfo/systemInfoList?1=1&amp;page=1">«</a></li>
+        
+            <li class="page-item">
+                <a class="page-link" style="font-weight:bold;color:#000">1</a>
+                
+            </li>
+        
+        <li class="page-item"><a class="page-link" href="http://39.106.55.224/wgcloud/systemInfo/systemInfoList?1=1&amp;page=1">»</a></li>
+    </ul>
+</div>
+    </div>
+    <!-- /.card -->
+
+
+  </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <form method="post" id="form2" action="http://39.106.55.224/wgcloud/systemInfo/save">
+            <div class="modal-content" style="font-size:0.90rem">
+                <div class="modal-header">
+                    <h4 class="modal-title">编辑备注</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <input type="hidden" id="id" name="id">
+                        <input type="text" autocomplete="off" class="validate[required,maxSize[40] form-control" name="remark" id="remark" placeholder="华南区">
+                    </p>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default  btn-sm" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="ajaxSaveRemark()" class="btn btn-primary btn-sm">保存</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </form></div>
+        <!-- /.modal-dialog -->
+    </div>
+
+  <!-- /.content-wrapper -->
+<footer class="main-footer">
+	<strong>Copyright ©2017-<span id="copyyear">2021</span> <a target="_blank" href="http://www.transcendcom.cn/">www.transcendcom.cn</a>.</strong>
+	All rights reserved.
+	<div class="float-right d-none d-sm-inline-block">
+		
+			<span id="newversion"></span><b id="nowversion" alt="专业版
+到期时间：20220107
+节点数量：50" title="专业版
+到期时间：20220107
+节点数量：50">Version 3.3.1-pro</b>
+		
+		
+	</div>
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+	<!-- Control sidebar content goes here -->
+<div class="p-3 control-sidebar-content"><h5>Customize AdminLTE</h5><hr class="mb-2"><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>No Navbar border</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Body small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Navbar small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Footer small text</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav flat style</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav legacy style</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav compact</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Sidebar nav child indent</span></div><div class="mb-1"><input type="checkbox" value="1" class="mr-1"><span>Main Sidebar disable hover/focus auto expand</span></div><div class="mb-4"><input type="checkbox" value="1" class="mr-1"><span>Brand small text</span></div><h6>Navbar Variants</h6><div class="d-flex"><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-secondary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-cyan elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-light elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-white elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div></div><h6>Accent Color Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Dark Sidebar Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Light Sidebar Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-navy elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-fuchsia elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-maroon elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-lime elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-olive elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div></div><h6>Brand Logo Variants</h6><div class="d-flex"></div><div class="d-flex flex-wrap mb-3"><div class="bg-primary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-secondary elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-info elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-success elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-danger elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-indigo elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-purple elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-pink elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-teal elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-cyan elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray-dark elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-gray elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-light elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-warning elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-white elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><div class="bg-orange elevation-2" style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div><a href="javascript:void(0)">clear</a></div></div></aside>
+<!-- /.control-sidebar -->
+
+<!-- jQuery -->
+<script src="./hostManage_files/jquery.min.js.下载"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="./hostManage_files/jquery-ui.min.js.下载"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+	$.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="./hostManage_files/bootstrap.bundle.min.js.下载"></script>
+<!-- Select2 -->
+<script src="./hostManage_files/select2.full.min.js.下载"></script>
+<!-- ChartJS -->
+<script src="./hostManage_files/Chart.min.js.下载"></script>
+<!-- Sparkline -->
+<script src="./hostManage_files/sparkline.js.下载"></script>
+<!-- JQVMap -->
+<script src="./hostManage_files/jquery.vmap.min.js.下载"></script>
+<script src="./hostManage_files/jquery.vmap.usa.js.下载"></script>
+<!-- jQuery Knob Chart -->
+<script src="./hostManage_files/jquery.knob.min.js.下载"></script>
+<!-- InputMask -->
+<script src="./hostManage_files/moment.min.js.下载"></script>
+<script src="./hostManage_files/jquery.inputmask.bundle.min.js.下载"></script>
+<!-- daterangepicker -->
+<script src="./hostManage_files/daterangepicker.js.下载"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="./hostManage_files/tempusdominus-bootstrap-4.min.js.下载"></script>
+<!-- Summernote -->
+<script src="./hostManage_files/summernote-bs4.min.js.下载"></script>
+<!-- overlayScrollbars -->
+<script src="./hostManage_files/jquery.overlayScrollbars.min.js.下载"></script>
+<!-- AdminLTE App -->
+<script src="./hostManage_files/adminlte.js.下载"></script>
+<!-- SweetAlert2 -->
+<script src="./hostManage_files/sweetalert2.min.js.下载"></script>
+<!-- Toastr -->
+<script src="./hostManage_files/toastr.min.js.下载"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./hostManage_files/demo.js.下载"></script>
+<!-- my97 datepicker -->
+<script src="./hostManage_files/WdatePicker.js.下载"></script>
+<script type="text/javascript">
+toastr.options.timeOut = 15000;
+</script>
+    <script src="./hostManage_files/jquery.form.min.js.下载" type="text/javascript" charset="utf-8"></script>
+
+<div id="sidebar-overlay"></div></div>
+<!-- ./wrapper -->
+
+<script src="./hostManage_files/host.js.下载"></script>
+<script>
+
+    var msg = null;
+    if(msg!='' && msg!=null){
+        toastr.info(msg);
+    }
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,79 @@
+function searchByOrder(orderBy,orderType){
+	window.location.href = "/wgcloud/systemInfo/systemInfoList?orderBy="+orderBy+"&orderType="+orderType;
+}
+
+function searchByOnline(state){
+	window.location.href = "/wgcloud/systemInfo/systemInfoList?state="+state;
+}
+
+function searchByOnlineDashView(state){
+	window.location.href = "/wgcloud/systemInfo/systemInfoList?dashView=1&state="+state;
+}
+
+
+function searchByOrderDashView(orderBy,orderType){
+	window.location.href = "/wgcloud/systemInfo/systemInfoList?dashView=1&orderBy="+orderBy+"&orderType="+orderType;
+}
+
+function viewImage(id) {
+	window.location.href = "/wgcloud/dash/hostDraw?id="+id;
+}
+
+function viewDashView(id) {
+	window.location.href = "/wgcloud/systemInfo/detail?dashView=1&id="+id;
+}
+function viewChartDashView(id) {
+	window.location.href = "/wgcloud/systemInfo/chart?dashView=1&id="+id;
+}
+function viewDatetDashView(id,searchTime){
+	var searchDate = $("#searchDate").val();
+	window.location.href = "/wgcloud/systemInfo/chart?dashView=1&id="+id+"&date="+searchDate+"&am="+searchTime;
+}
+function view(id) {
+	window.location.href = "/wgcloud/systemInfo/detail?id="+id;
+}
+function viewChart(id) {
+	window.location.href = "/wgcloud/systemInfo/chart?id="+id;
+}
+
+function del(id) {
+	if(confirm('你确定要删除吗？此操作只会删除主机，主机下的监控资源及历史数据不会被删除')) {
+		window.location.href = "/wgcloud/systemInfo/del?id=" + id;
+	}
+}
+
+
+function viewDate(id,searchTime){
+	var searchDate = $("#searchDate").val();
+	window.location.href = "/wgcloud/systemInfo/chart?id="+id+"&date="+searchDate+"&am="+searchTime;
+}
+
+function viewApps(hostname){
+	window.location.href = "/wgcloud/appInfo/list?hostname="+hostname;
+}
+
+function viewDockers(hostname){
+	window.location.href = "/wgcloud/dockerInfo/list?hostname="+hostname;
+}
+
+function viewPorts(hostname){
+	window.location.href = "/wgcloud/portInfo/list?hostname="+hostname;
+}
+
+function viewFileWarn(hostname){
+	window.location.href = "/wgcloud/fileWarnInfo/list?hostname="+hostname;
+}
+
+function ajaxSaveRemark() {
+	$("#form2").ajaxSubmit(function(message) {
+		window.location.href = window.location.href;
+	});
+}
+
+function setHostRemark(hostId,hostRemark) {
+	$("#id").val(hostId);
+	$("#remark").val(hostRemark);
+}
+function cancel(){
+	history.back();
+}

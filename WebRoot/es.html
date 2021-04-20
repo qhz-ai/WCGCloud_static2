@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://www.wgstart.com/elasticsearch-head/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>elasticsearch-head</title>
+
+		<link rel="stylesheet" href="./elasticsearch-head_files/reset.css">
+		<link rel="stylesheet" href="./elasticsearch-head_files/vendor.css">
+		<link rel="stylesheet" href="./elasticsearch-head_files/app.css">
+		<script src="./elasticsearch-head_files/hm.js.下载"></script><script src="./elasticsearch-head_files/i18n.js.下载" data-basedir="_site/lang" data-langs="en,fr,pt,zh,zh-TW,tr,ja"></script><script src="./elasticsearch-head_files/en_strings.js.下载"></script><script src="./elasticsearch-head_files/zh_strings.js.下载"></script>
+		<script src="./elasticsearch-head_files/vendor.js.下载"></script>
+		<script src="./elasticsearch-head_files/app.js.下载"></script>
+		<script>
+			window.onload = function() {
+				if(location.href.contains("/_plugin/")) {
+					var base_uri = location.href.replace(/_plugin\/.*/, '');
+				}
+				var args = location.search.substring(1).split("&").reduce(function(r, p) {
+					r[decodeURIComponent(p.split("=")[0])] = decodeURIComponent(p.split("=")[1]); return r;
+				}, {});
+				new app.App("body", {
+					id: "es",
+					base_uri: args["base_uri"] || base_uri,
+					auth_user : args["auth_user"] || "",
+					auth_password : args["auth_password"],
+					dashboard: args["dashboard"]
+				});
+			};
+		</script>
+		<link rel="icon" href="http://www.wgstart.com/elasticsearch-head/_site/base/favicon.png" type="image/png">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0859b9f86f6e06c92463b09017c09bf0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script type="text/javascript">
+var targetProtocol = "https:";
+if (window.location.protocol == targetProtocol)
+ window.location.href = "http://www.wgstart.com/elasticsearch-head/index.html";
+</script>
+
+
+	</head>
+	<body>
+<!-- 
+<div class="uiApp"><div id="es-header" class="uiApp-header">
+<div class="uiHeader"><span class="uiClusterConnect">
+<input type="text" class="uiClusterConnect-uri">
+<button type="button">连接</button></span><span class="uiHeader-name">
+</span><span class="uiHeader-status" style="background: grey;">集群健康值: 未连接</span>
+<h1>Elasticsearch</h1><span class="pull-right">
+<button type="button" class="uiButton uiMenuButton">
+<div class="uiButton-content"><div class="uiButton-label">信息</div></div>
+</button></span></div><div class="uiApp-headerMenu">
+<div class="uiApp-headerMenuItem pull-left active">概览</div>
+<div class="uiApp-headerMenuItem pull-left">索引</div>
+<div class="uiApp-headerMenuItem pull-left">数据浏览</div>
+<div class="uiApp-headerMenuItem pull-left">基本查询<a class="uiApp-headerNewMenuItem "> [+]</a></div>
+<div class="uiApp-headerMenuItem pull-left">复合查询<a class="uiApp-headerNewMenuItem "> [+]</a></div></div>
+</div><div id="es-body" class="uiApp-body"><div class="uiClusterOverview">
+<div class="uiToolbar"><div class="pull-left"><h2>集群概览</h2>
+<button type="button" class="uiButton uiMenuButton"><div class="uiButton-content">
+<div class="uiButton-label">集群排序</div></div></button>
+<button type="button" class="uiButton uiMenuButton"><div class="uiButton-content">
+<div class="uiButton-label">Sort Indices</div></div></button>
+<button type="button" class="uiButton uiMenuButton"><div class="uiButton-content">
+<div class="uiButton-label">View Aliases</div></div></button><div class="uiField uiTextField">
+<input type="text" name="" placeholder="Index Filter"></div></div>
+<div class="pull-right"><div class="uiSplitButton"><button type="button" class="uiButton disabled">
+<div class="uiButton-content"><div class="uiButton-label">刷新</div></div></button>
+<button type="button" class="uiButton uiMenuButton"><div class="uiButton-content">
+<div class="uiButton-label">&nbsp;</div></div></button></div></div></div>
+<div class="uiClusterOverview-table"></div></div></div></div> --></body></html>

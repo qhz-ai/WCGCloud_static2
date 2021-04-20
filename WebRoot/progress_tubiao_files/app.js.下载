@@ -1,0 +1,34 @@
+function searchByOrder(orderBy,orderType){
+	window.location.href = "/wgcloud/appInfo/list?orderBy="+orderBy+"&orderType="+orderType+"&hostname="+$("#hostname").val();
+}
+
+function searchByOnline(state){
+	window.location.href = "/wgcloud/appInfo/list?state="+state;
+}
+
+function add() {
+	window.location.href = "/wgcloud/appInfo/edit";
+}
+
+
+function view(id) {
+	window.location.href = "/wgcloud/appInfo/view?id="+id;
+}
+
+function edit(id){
+	window.location.href = "/wgcloud/appInfo/edit?id="+id;
+}
+
+function del(id) {
+	if(confirm('你确定要删除吗？')) {
+		window.location.href = "/wgcloud/appInfo/del?id=" + id;
+	}
+}
+function viewDate(id,searchTime){
+	var searchDate = $("#searchDate").val();
+	window.location.href = "/wgcloud/appInfo/view?id="+id+"&date="+searchDate+"&am="+searchTime;
+}
+
+function cancel(){
+	history.back();
+}
